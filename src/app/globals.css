@@ -1,8 +1,12 @@
-@import "tailwindcss";
+/* Tailwind imports already handled by the directives below */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
 }
 
 @theme inline {
@@ -14,13 +18,304 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #FFFFFF;
+    --foreground: #000000;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-white text-black font-sans;
+}
+
+/* globals.css - NavBar Component Styles with Tailwind */
+.main-container {
+  background: #FFFFFF;
+  padding: 102px 0px 20px;
+}
+/* Main navbar container */
+.navbar-container {
+  @apply w-full shadow-md sticky top-0 bg-white z-40 px-32 ;
+}
+
+/* Upper section of navbar */
+.navbar-upper {
+  @apply sm:flex-row items-center p-2 md:p-4 flex flex-col justify-between;
+}
+
+/* Logo and location section */
+.navbar-logo-location {
+  @apply flex items-center flex-1 min-w-[250px] md:min-w-[200px] sm:min-w-0;
+}
+
+/* Logo container */
+.logo-container {
+  @apply mr-2.5;
+}
+
+.logo-image {
+  @apply h-auto max-w-[69px] sm:max-w-[50px];
+}
+
+/* Location selector */
+.location-container {
+  @apply flex items-center;
+}
+
+.location-wrapper {
+  @apply flex items-center cursor-pointer;
+}
+
+.location-icon-wrapper {
+  @apply mr-2 flex items-center;
+}
+
+.location-icon {
+  @apply w-6 h-6;
+}
+
+.location-text {
+  @apply flex flex-col ;
+}
+
+.location-label {
+  @apply text-xs text-gray-500 mb-0.5 md:text-[11px];
+}
+
+.location-value {
+  @apply flex items-center;
+}
+
+.location-address {
+  @apply text-sm font-medium text-gray-700 mr-1 md:text-[13px];
+}
+
+.dropdown-icon {
+  @apply w-2.5 h-2.5 border-b border-r border-gray-700 transform rotate-45 inline-block mb-0.5;
+}
+
+/* Search section */
+.search-section {
+  @apply  px-4 max-w-[400px] hidden sm:block md:w-full md:max-w-full md:mt-3 flex-row md:px-0 max-h-32;
+}
+.search-container {
+  @apply flex-col ;
+}
+
+.search-box {
+  @apply flex  border border-gray-400 rounded-lg p-10 sm:py-1.5 sm:px-2.5 ;
+}
+
+.search-icon {
+  @apply mr-2 w-7 h-7 sm:w-5 sm:h-5;
+}
+
+.search-input {
+  @apply border-none outline-none w-full text-sm md:text-[13px] text-black placeholder-gray-400;
+}
+
+/* Login section */
+.login-section {
+  @apply  items-center min-w-[100px];
+}
+
+.login-menu {
+  @apply list-none flex p-0 m-0;
+}
+
+.login-button {
+  @apply flex items-center justify-start flex-row rounded-lg border border-teal-800 ml-2.5 cursor-pointer h-10 py-0 px-4 pl-4 min-w-[103px];
+}
+
+.login-icon {
+  @apply mr-2;
+}
+
+.login-text {
+  @apply flex items-center font-semibold text-sm;
+}
+
+.login-text-label {
+  @apply text-teal-800 mr-3 md:text-[13px] ;
+}
+
+/* Navigation menu section */
+.nav-menu-container {
+  @apply collapse md:visible border-t border-gray-100;
+}
+
+.nav-menu {
+  @apply flex justify-center;
+}
+
+.menu-list {
+  @apply flex list-none m-0 p-0 overflow-x-auto whitespace-nowrap scrollbar-hide sm:justify-between;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.menu-list::-webkit-scrollbar {
+  @apply hidden;
+}
+
+.menu-item {
+  @apply invisible md:visible py-4 px-5 text-sm font-medium text-gray-700 cursor-pointer relative hover:text-blue-600
+         lg:py-3 lg:px-4 md:py-2.5 md:px-3.5 md:text-[13px] sm:py-2 sm:px-2.5 sm:text-[11px] ;
+}
+
+.menu-item a {
+  @apply no-underline text-inherit flex items-end;
+}
+
+.new-badge {
+  @apply bg-green-500 text-white text-xs py-0.5 px-1.5 rounded-full ml-1.5 sm:text-[8px] sm:py-0 sm:px-1;
+}
+
+/* Custom scrollbar-hide class since Tailwind might not have this by default */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.text-align-justify{
+  @apply text-justify;
+}
+
+.add-doc-form-title{
+  @apply text-3xl font-bold text-gray-800 mb-4 py-4 px-3 text-center;
+}
+
+.form-container{
+  @apply flex flex-col items-center justify-center px-6 md:px-8 lg:px-12 mx-auto w-full max-w-4xl;
+}
+
+.parent-search-login{
+  @apply flex flex-row items-center justify-center; 
+}
+
+
+/* Tailwind CSS for Footer Component */
+/* Place this in globals.css */
+
+/* Footer main container */
+.footer-container {
+  @apply w-full bg-gray-50 pt-8 pb-0 px-0 flex flex-col items-center;
+}
+
+/* Footer content wrapper */
+.footer-content {
+  @apply w-full max-w-7xl flex flex-col md:flex-row md:justify-between md:items-start px-4 md:px-8;
+}
+
+/* Accordion container (columns) */
+.accordion-container {
+  @apply w-full md:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-4;
+}
+
+/* Accordion (each column) */
+.accordion {
+  @apply mb-8 md:mb-0;
+}
+
+/* Accordion header */
+.accordion-header {
+  @apply flex items-center mb-2;
+}
+
+/* Expand icon (for visual, can be styled further if needed) */
+.expand-icon {
+  @apply w-2 h-2 mr-2 rounded-full bg-gray-300 inline-block;
+}
+.expand-icon.active {
+  @apply bg-blue-600;
+}
+
+/* Accordion title */
+.title {
+  @apply text-base font-semibold text-gray-900;
+}
+
+/* Accordion body
+.accordion-body {
+  @apply;
+} */
+
+/* Footer links list */
+.footer-links {
+  @apply list-none p-0 m-0 space-y-1;
+}
+
+/* Footer link item
+.footer-links li {
+  @apply;
+} */
+
+/* Footer link anchor */
+.footer-links a {
+  @apply text-sm text-gray-700 hover:text-blue-600 transition-colors duration-150 no-underline;
+}
+
+/* Footer links wrapper (right side) */
+.footer-links-wrapper {
+  @apply w-full md:w-1/4 flex flex-col items-center md:items-end mt-8 md:mt-0;
+}
+
+/* Footer logo */
+.footer-logo {
+  @apply mb-6;
+}
+.logo {
+  @apply flex items-center;
+}
+.icon-apollo247 {
+  @apply inline-block align-middle;
+}
+
+/* Download app section */
+.download-app-container {
+  @apply mb-6 w-full flex flex-col items-center md:items-end;
+}
+.footer-heading {
+  @apply text-base font-semibold text-gray-900 mb-2;
+}
+.app-links {
+  @apply flex flex-row gap-3;
+}
+.icon-playstore,
+.icon-appstore {
+  @apply w-36 h-12 inline-block;
+}
+
+/* Social links section */
+.social-links-wrapper {
+  @apply w-full flex flex-col items-center md:items-end;
+}
+.social-links {
+  @apply flex flex-row gap-4 mt-2;
+}
+.icon-facbook,
+.icon-twitter,
+.icon-linkedIn,
+.icon-youtube {
+  @apply w-8 h-8 rounded-full flex items-center justify-center bg-gray-200 hover:bg-blue-600 transition-colors duration-150;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1023px) {
+  .footer-content {
+    @apply flex-col;
+  }
+  .footer-links-wrapper {
+    @apply w-full items-center mt-8;
+  }
+  .accordion-container {
+    @apply w-full grid-cols-2;
+  }
+}
+@media (max-width: 767px) {
+  .accordion-container {
+    @apply grid-cols-1;
+  }
+  .footer-links-wrapper {
+    @apply w-full items-center mt-8;
+  }
 }
