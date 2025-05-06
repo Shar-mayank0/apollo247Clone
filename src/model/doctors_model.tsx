@@ -16,6 +16,8 @@ export interface IDoctor extends Document {
     facility: string[];
     likes: number;
     location: string;
+    onlineAvailability: boolean;
+    offlineAvailability: boolean;
     onlineAvailabilityStart: Time;
     onlineAvailabilityEnd: Time;
     offlineAvailabilityStart: Time;
@@ -33,6 +35,8 @@ const doctorSchema = new Schema<IDoctor>({
     facility: { type: [String], required: true },
     likes: { type: Number, default: 0 },
     location: { type: String, required: true },
+    onlineAvailability: { type: Boolean, default: false },
+    offlineAvailability: { type: Boolean, default: false },
     onlineAvailabilityStart:{type:{hours:Number,minutes:Number}},
     offlineAvailabilityStart:{type:{hours:Number,minutes:Number}},
     onlineAvailabilityEnd:{type:{hours:Number,minutes:Number}},

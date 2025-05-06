@@ -319,3 +319,15 @@ body {
     @apply w-full items-center mt-8;
   }
 }
+
+.main-container {
+  @apply bg-white grid grid-cols-3 grid-rows-2 gap-4;
+}
+
+.sidebarFilter{
+  @apply row-span-3;
+}
+
+.main-content{
+  @apply row-span-2;
+}
