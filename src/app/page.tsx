@@ -1,6 +1,7 @@
 import React from 'react'
 import TextContent from '@/components/textContent'
 import FilterComponent from '@/components/filterComp'
+import DocAdv from '@/components/docAdv'
 
 function homepage() {
   return (
@@ -13,7 +14,7 @@ function homepage() {
           <h1 className='main-heading'>docList container</h1>
         </div>
         <div className='add-container'>
-          <h1 className='add-heading'>doc add</h1>
+          <DocAdv />
         </div>
       </main>
       <div className='lower-seo-content'>

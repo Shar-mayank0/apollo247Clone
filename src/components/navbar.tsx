@@ -15,7 +15,7 @@ function NavBar() {
                     <div className="location-wrapper">
                         <div className="location-icon-wrapper">
                             <span className="location-icon-span">
-                                <img src="/images/location-icon.svg" alt="chooseLocation" width="24" height="24" loading="lazy" fetchPriority="low" className="location-icon" />
+                                <img src="./images/ic_location_new.svg" alt="chooseLocation" width="24" height="24" loading="lazy" fetchPriority="low" className="location-icon" />
                             </span>
                             <div className="location-text">
                                 <label className="location-label">Select Location</label>
@@ -33,7 +33,7 @@ function NavBar() {
             <div className="search-section flex-row mt-10">
                 <div className="search-container">
                     <div className="search-box "><span className="search-icon-span"></span>
-                        <img src="/images/search-icon.svg" alt="Search" width="28" height="28" loading="lazy" fetchPriority="low" className="search-icon" />
+                        <img src="/images/ic_search_new.svg" alt="Search" width="28" height="28" loading="lazy" fetchPriority="low" className="search-icon" />
                         <input placeholder="Search Doctors, Specialities, Conditions etc." title="Search" className="search-input" />
                     </div>
                 </div>

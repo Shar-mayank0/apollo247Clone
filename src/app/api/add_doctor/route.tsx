@@ -19,8 +19,13 @@ export async function POST(request: NextRequest) {
                 facility, 
                 likes, 
                 location, 
-                onlineAvailability, 
-                offlineAvailability } = reqBody;
+                onlineAvailability,
+                offlineAvailability,
+                onlineAvailabilityStart,
+                onlineAvailabilityEnd,
+                offlineAvailabilityStart,
+                offlineAvailabilityEnd 
+                } = reqBody;
 
                 const doctor = await DoctorModel.findOne({ email });
                 if (doctor) {
@@ -38,7 +43,11 @@ export async function POST(request: NextRequest) {
                     likes, 
                     location, 
                     onlineAvailability, 
-                    offlineAvailability
+                    offlineAvailability,
+                    onlineAvailabilityStart,
+                    onlineAvailabilityEnd,
+                    offlineAvailabilityStart,
+                    offlineAvailabilityEnd 
                 });
                 const savedDoc = await newDoctor.save();
                 console.log("Doctor added successfully", savedDoc);
