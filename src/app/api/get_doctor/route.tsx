@@ -61,8 +61,8 @@ export async function GET(request: NextRequest) {
         }
 
         console.log("Query:", query);
-        // const doctors = await DoctorModel.find(query).sort({ likes: -1 });
-        return NextResponse.json(query, { status: 200 });
+        const doctors = await DoctorModel.find(query).sort({ likes: -1 });
+        return NextResponse.json(doctors, { status: 200 });
     } catch (error) {
         console.error("Error fetching doctors:", error);
         return NextResponse.json({ message: "Error fetching doctors", error: String(error) }, { status: 500 });
